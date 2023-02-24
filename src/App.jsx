@@ -12,8 +12,9 @@ function App() {
   const { blur, spacing, base } = formValues;
 
   const handleChange = ( e ) => {
-    const suffix = e.target.dataset.sizing || '';
-    document.documentElement.style.setProperty(`--${e.target.name}`,e.target.value + suffix )
+    const { name, value, dataset } = e.target;
+    const suffix = dataset.sizing || '';
+    document.documentElement.style.setProperty(`--${name}`,value + suffix )
     handleInputChange(e);
   }
 
